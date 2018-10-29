@@ -4,10 +4,10 @@
 {% endblock %}
 {% block body %}
 <div class="container">
-    <p>
-
-        Firstname: {{ user.first_name }}<br>
-        Lastname: {{ user.last_name }}
-    </p>
+ <form method="post">
+     {% csrf_token %}
+     {{ form.as_p }}
+     <button type="submit">Submit</button>
+ </form>
 </div>
 {% endblock %}
