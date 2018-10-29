@@ -9,5 +9,7 @@ urlpatterns = [
     url(r'^register/$', views.register, name='register'),
     url(r'^profile/$', views.view_profile, name='view_profile'),
     url(r'^profile/edit/$', views.edit_profile, name='edit_profile'),
-    url(r'^change-password/$',views.change_password, name='change_password')
+    url(r'^change-password/$',views.change_password, name='change_password'),
+    url(r'reset-password/$', auth_views.PasswordResetView.as_view(), name='password_reset'),
+    url(r'^reset-password/done/$', auth_views.PasswordResetDoneView.as_view(), name='reset_password_done')
 ]
