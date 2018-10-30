@@ -4,4 +4,10 @@
 {% endblock %}
 {% block body %}
 <h1>Home</h1>
+{{ name }}
+{% for num in numbers %}
+    <ol>
+        <li>{{ num }}</li>
+    </ol>
+{% endfor %}
 {% endblock %}
