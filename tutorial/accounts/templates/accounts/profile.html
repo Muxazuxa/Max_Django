@@ -9,7 +9,7 @@
         Firstname: {{ user.first_name }}<br>
         Lastname: {{ user.last_name }}<br>
         Description: {{user.userprofile.description }}
-
     </p>
+        <img src="{{ user.userprofile.image.url }}" width="240">
 </div>
 {% endblock %}
