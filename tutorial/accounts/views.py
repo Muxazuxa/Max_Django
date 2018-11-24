@@ -9,14 +9,6 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-def home(request):
-    number=[1,2,4,5,6]
-    name = 'Jenish'
-
-    args={'name':name, 'numbers':number}
-    return render(request, 'accounts/home.html', args, number)
-
-
 def register(request):
     if request.method=='POST':
         form = RegistrationForm(request.POST)
