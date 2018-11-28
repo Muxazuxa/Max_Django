@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
-<h1>Home</h1>
+<div class = "container">
+    <div class="col-md-8">
+<h2>Home</h2>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form.post }}
+    <br>
     <button type="submit">Submit</button>
 </form>
 <h2>{{ text }}</h2>
@@ -13,4 +15,14 @@
 <h2>{{ post.post }}</h2>
 <h2>{{post.created }}</h2>
 {% endfor %}
+</div>
+    <div class = "col-md-4">
+        <h2>Other People</h2>
+        {% for user in users %}
+        <a href="{% url 'accounts:view_profile' %}">
+       <h3>  {{ user.username }} </h3>
+            </a>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
